@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyC4WY6JTaBzxNh1QOt6uOxNqMCJirp-FB8",
+    authDomain: "hestia-prototype.firebaseapp.com",
+    databaseURL: "https://hestia-prototype.firebaseio.com",
+    projectId: "hestia-prototype",
+    storageBucket: "hestia-prototype.appspot.com",
+    messagingSenderId: "1040129533974",
+    appId: "1:1040129533974:web:bc901c533e60ccf614ed37"
+  }
 };
 
 /*

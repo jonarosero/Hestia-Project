@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hestia-prototype": {
+      "hosting": {
+        "hestia-app": [
+          "hestia-prototype"
+        ]
+      }
+    }
+  }
+}

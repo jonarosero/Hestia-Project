@@ -109,6 +109,10 @@
           "options": {
             "browserTarget": "hestia-app:build"
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

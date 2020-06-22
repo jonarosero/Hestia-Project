@@ -62,13 +62,11 @@ module.exports = {
             default: '0.25rem',
             big: '0.5rem',
             large: '1rem',
+            'large-x2': '2rem',
+            'large-x4': '4rem',
             full: '9999px',
         },
         extend: {
-            container: {
-                center: true,
-                padding: '1rem',
-            },
             spacing: {
                 '1/3': '33.3333%',
                 '2/3': '66.6666%',

@@ -1,0 +1,58 @@
+<header class="px-12 mt-20 mb-10">
+    <div class="flex flex-col items-center space-y-2">
+        <h1 class="text-white text-display-1 font-display-1">
+            Cuenta UTPL
+        </h1>
+
+        <div class="w-full h-1 rounded bg-low-contrast"></div>
+
+        <span class="text-center text-reduce-contrast">
+            Ingresa tu usuario UTPL para iniciar sesión con tu cuenta utpl
+        </span>
+    </div>
+</header>
+
+
+<section class="px-8">
+    <form class="flex flex-col space-y-8">
+        <!-- input warper -->
+        <div class="relative p-4 border-2 rounded border-low-contrast bg-background focus-within:border-primary">
+            <label for="username" class="absolute top-0 transform -translate-y-1/2 ">
+                <span
+                    class="px-2 -ml-2 whitespace-no-wrap text-primary bg-background text-subtitle font-subtitle">Usuario
+                    UTPL</span>
+            </label>
+            <input type="text" name="username" placeholder="Ingresa tu Usuario UTPL"
+                class="w-full text-white outline-none font-title text-title bg-background">
+        </div>
+
+
+        <div class="self-center">
+            <button class="px-4 py-2 transition-shadow rounded bg-primary border-primary shadow-neo " type="submit">
+                <span class="text-white uppercase text-button font-button">
+                    Iniciar Sesión
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+            </button>
+        </div>
+    </form>
+</section>
+
+<section class="flex justify-center mt-10 mb-5">
+    <a class="px-4 py-2 transition-shadow rounded bg-background border-primary hover:shadow "
+        href="https://support.google.com/chrome/?p=help&ctx=keyboard#topic=9796470" rel="noreferrer noopener"
+        target="_blank">
+        <span class="text-white uppercase text-button font-button">
+            ¿problemas para ingresar?
+        </span>
+    </a>
+</section>
+
+<footer class="sticky bottom-0 z-50 w-full px-4 py-2 shadow-top bg-background">
+    <a routerLink="/ingresar">
+        <span class="text-white uppercase text-button font-button">
+            <i class="far fa-times-circle"></i>
+            Regresar
+        </span>
+    </a>
+</footer>

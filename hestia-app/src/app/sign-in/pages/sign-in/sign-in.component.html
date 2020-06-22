@@ -1,0 +1,55 @@
+<div class="flex justify-center py-12">
+    <!-- main image -->
+    <div class="w-64 h-56 overflow-hidden shadow rounded-large-x2">
+        <img src="/assets/hestia-logo.png" alt="Logo Hestia" class="object-cover w-full h-full">
+    </div>
+</div>
+
+<header class="px-12 mb-8">
+    <div class="flex flex-col items-center space-y-2">
+        <h1 class="text-white text-display-1 font-display-1">
+            Inicia Sesión
+        </h1>
+
+        <div class="w-full h-1 bg-low-contrast rounded"></div>
+
+        <span class="text-center text-reduce-contrast">
+            Para empezar a jugar primero debes iniciar sesión y podrás conectar con tus amigos
+        </span>
+    </div>
+</header>
+
+<section class="mb-8">
+    <div class="flex flex-col items-center space-y-3">
+        <!-- google sign in button -->
+        <button class="px-4 py-2 transition-shadow rounded bg-background hover:shadow ">
+            <span class="text-white uppercase text-button font-button">
+                <i class="fab fa-google"></i>
+                Ingresar con google
+            </span>
+        </button>
+
+        <!-- twitter sign in button -->
+        <button class="px-4 py-2 transition-shadow rounded bg-background hover:shadow ">
+            <span class="text-white uppercase text-button font-button">
+                <i class="fab fa-twitter"></i>
+                Ingresar con twitter
+            </span>
+        </button>
+
+        <!-- facebook sign in button -->
+        <button class="px-4 py-2 transition-shadow rounded bg-background hover:shadow ">
+            <span class="text-white uppercase text-button font-button">
+                <i class="fab fa-facebook-f"></i>
+                Ingresar con facebook
+            </span>
+        </button>
+
+        <!-- UTPL sign in button -->
+        <a class="px-4 py-2 transition-shadow rounded bg-primary shadow-neo " routerLink="/ingresar/utpl">
+            <span class="text-white uppercase text-button font-button">
+                Iniciar sesión con UTpl
+            </span>
+        </a>
+    </div>
+</section>

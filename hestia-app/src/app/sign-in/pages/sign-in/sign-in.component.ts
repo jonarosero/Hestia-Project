@@ -2,13 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'hestia-sign-in',
-  template: `
-    <p>
-      sign-in works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './sign-in.component.html'
 })
 export class SignInComponent implements OnInit {
 

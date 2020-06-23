@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hestia-profile',
-  template: `
-    <p>
-      profile works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readonly auth: AngularFireAuth,
+    private readonly router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  async signOut() {
+    try {
+      await this.auth.signOut();
+      await this.router.navigate(['/ingresar']);
+    } catch (error) {
+      console.log(error);
+    }
   }
-
 }

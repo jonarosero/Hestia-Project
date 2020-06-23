@@ -1,0 +1,45 @@
+<div class="flex flex-col h-full">
+    <div class="flex-grow overflow-y-scroll">
+        <router-outlet></router-outlet>
+    </div>
+
+    <nav class="sticky bottom-0 w-full overflow-x-auto bg-background shadow-top">
+        <div class="flex flex-row justify-around text-reduce-contrast">
+            <!-- home link -->
+            <a routerLink="/" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}"
+                class="px-4 py-2 uppercase whitespace-no-wrap text-button font-button">
+                <i class="fas fa-home"></i>
+                <ng-container *ngIf="router.url === '/'">
+                    Inicio
+                </ng-container>
+            </a>
+
+            <!-- leader board link -->
+            <a routerLink="/tablero" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}"
+                class="px-4 py-2 uppercase whitespace-no-wrap text-button font-button">
+                <i class="fas fa-list-ol"></i>
+                <ng-container *ngIf="router.url === '/tablero'">
+                    Tablero
+                </ng-container>
+            </a>
+
+            <!-- profile link -->
+            <a routerLink="/perfil" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}"
+                class="px-4 py-2 uppercase whitespace-no-wrap text-button font-button">
+                <i class="far fa-user-circle"></i>
+                <ng-container *ngIf="router.url === '/perfil'">
+                    Perfil
+                </ng-container>
+            </a>
+
+            <!-- profile link -->
+            <a routerLink="/configuracion" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}"
+                class="px-4 py-2 uppercase whitespace-no-wrap text-button font-button">
+                <i class="fas fa-cog"></i>
+                <ng-container *ngIf="router.url === '/configuracion'">
+                    Configuración
+                </ng-container>
+            </a>
+        </div>
+    </nav>
+</div>

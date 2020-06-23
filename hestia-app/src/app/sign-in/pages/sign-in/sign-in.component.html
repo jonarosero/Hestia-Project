@@ -11,7 +11,7 @@
             Inicia Sesión
         </h1>
 
-        <div class="w-full h-1 bg-low-contrast rounded"></div>
+        <div class="w-full h-1 rounded bg-low-contrast"></div>
 
         <span class="text-center text-reduce-contrast">
             Para empezar a jugar primero debes iniciar sesión y podrás conectar con tus amigos
@@ -22,7 +22,7 @@
 <section class="mb-8">
     <div class="flex flex-col items-center space-y-3">
         <!-- google sign in button -->
-        <button class="px-4 py-2 transition-shadow rounded bg-background hover:shadow ">
+        <button class="px-4 py-2 transition-shadow rounded bg-background hover:shadow " (click)="signInWithGoogle()">
             <span class="text-white uppercase text-button font-button">
                 <i class="fab fa-google"></i>
                 Ingresar con google

@@ -60,6 +60,7 @@ module.exports = {
         // corners
         borderRadius: {
             default: '0.25rem',
+            small: '0.375rem',
             big: '0.5rem',
             large: '1rem',
             'large-x2': '2rem',

@@ -1,1 +1,61 @@
-<h1 class='' >hola mundo</h1>
+<ng-container *ngIf="auth.user | async as user">
+    <header class="px-8 pt-10">
+        <div class="flex flex-row items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-headline font-headline text-reduce-contrast">
+                    1600 pts
+                </span>
+
+                <span class="text-reduce-contrast text-subhead font-subhead">
+                    Pregunta: 5 de 10
+                </span>
+
+                <span class="text-subhead font-subhead text-primary-light">
+                    4 segundos restantes
+                </span>
+            </div>
+
+            <div class="w-16 h-16 overflow-hidden rounded-full ">
+                <img [src]="user.photoURL" alt="Foto de perfil" class="w-full h-full bg-reduce-contrast">
+            </div>
+        </div>
+    </header>
+</ng-container>
+
+
+<!-- question -->
+<section class="px-8 pt-10">
+
+    <div class="flex-none p-2 px-4 pt-2 rounded-small 
+        bg-white shadow-neo text-subtitle">
+        <h3 class="text-title text-low-contrast">Biología</h3>
+        <hr class="border-green">
+        <p class="my-2 ">¿Cuántos ATPs y NADH produce una vuelta del Ciclo de Krebs?</p>
+    </div>
+</section>
+
+<!-- answers -->
+<section class="px-8 pt-6">
+        
+        <!-- one major-->
+        <div class="my-3 flex-none p-2 px-4 pt-2 text-high-contrast rounded-small 
+        bg-low-contrast shadow-neo text-subtitle">
+            <p class="my-1 ">36 ATP los NADH se transformarón en ATP</p>
+        </div>
+
+        <div class="my-3 flex-none p-2 px-4 pt-2 text-high-contrast rounded-small 
+        bg-low-contrast shadow-neo text-subtitle">
+            <p class="my-1">1 ATP y 3 NADH</p>
+        </div>
+
+        <div class="my-3 flex-none p-2 px-4 pt-2 text-high-contrast rounded-small 
+        bg-low-contrast shadow-neo text-subtitle">
+            <p class="my-1">3 ATP y 1 NADH</p>
+        </div>
+
+        <div class="my-3 flex-none p-2 px-4 pt-2 text-high-contrast rounded-small 
+        bg-low-contrast shadow-neo text-subtitle">
+            <p class="my-1">4 ATP y 0 NADH</p>
+        </div>
+
+</section>

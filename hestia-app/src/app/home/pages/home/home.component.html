@@ -81,68 +81,131 @@
 </section>
 
 <!-- games -->
-<section class="px-8 pt-10">
-    <div class="flex flex-row items-center justify-between">
-        <div class="flex flex-col">
-            <h2 class="text-headline font-headline text-reduce-contrast">
+<section class="pt-10 pb-5">
+    <!-- section header -->
+    <div class="ml-8">
+        <div class="flex flex-row items-center justify-between">
+            <h2 class="font-headline text-headline text-reduce-contrast">
                 Elige y Juega
             </h2>
         </div>
     </div>
+    <!-- end header -->
 
     <!-- choose your game -->
-    <div class="flex flex-row my-6 overflow-x-auto scrolling-touch flex-no-wrap">
+    <div class="flex flex-row flex-no-wrap space-x-8 overflow-x-auto scrolling-touch">
         <!-- individual -->
-        <div
-            class="relative w-4/5 flex-none p-2 px-4 pt-2 ml-2 mr-6 text-high-contrast rounded-small 
-            text-high-contrast bg-low-contrast shadow-neo text-subtitle">
-                <h3 class="text-title">Individual</h3>
-                <img src="../../../../assets/classic-logo.png" alt="clasic game" class="absolute top-0 right-0 w-1/4 -mt-8">
-            <hr class="border-reduce-contrast">
-            <p class="my-2 ">Prácticas de preguntas acerca de una temática en específico</p>
-            <a href="" class="mt-3 mb-2 text-center ">
-                <div class="my-2 bg-primary rounded-small text-high-contrast bg-primary">
-                    EMPEZAR PARTIDA RÁPIDA >
-                </div>
-            </a>
-            <div class="mt-4 mb-2 text-center">  
-                <a href="">VER TEMÁTICAS ></a>
-            </div>
-        </div>
-        <!-- multiplayer -->
-        <div
-            class="relative w-4/5 flex-none p-2 px-4 pt-2 ml-2 mr-6 text-high-contrast
-            rounded-small text-high-contrast bg-low-contrast shadow-neo text-subtitle">
-            <h3 class="text-title">Multijugador</h3>
-            <img src="../../../../assets/multi-logo.png" alt="clasic game" class="absolute top-0 right-0 w-7/12 -mt-8">
+        <div class="relative flex-none w-4/5 pt-8 ml-8">
+            <!-- card container -->
+            <div class="overflow-hidden rounded-small bg-low-contrast shadow-neo">
+                <div class="flex flex-col px-4 py-3 space-y-3">
+                    <!-- card title -->
+                    <h3 class="text-title font-title text-high-contrast">
+                        Individual
+                    </h3>
 
-            <hr class="border-reduce-contrast">
-            <p class="my-2">Compite con tus amigos para conocer quien es el mejor</p>
-            <a href="" class="mt-3 mb-2 text-center ">
-                <div class="my-2 bg-primary rounded-small text-high-contrast bg-primary">
-                    CREAR UNA NUEVA PARTIDA >
+                    <!-- divider -->
+                    <hr class="border-reduce-contrast">
+
+                    <!-- card description -->
+                    <p class="text-body font-body text-high-contrast">
+                        Prácticas de preguntas acerca de una temática en específico
+                    </p>
+
+                    <!-- play action -->
+                    <a href="" class="flex justify-center px-4 py-2 bg-primary rounded-small">
+                        <span class="uppercase whitespace-no-wrap text-button font-button text-high-contrast">
+                            EMPEZAR PARTIDA RÁPIDA >
+                        </span>
+                    </a>
+
+                    <!-- secondary action -->
+                    <a href="" class="flex justify-center px-4 py-2">
+                        <span class="uppercase whitespace-no-wrap text-button font-button text-high-contrast">
+                            VER TEMÁTICAS
+                        </span>
+                    </a>
                 </div>
-            </a>
-            <div class="mt-4 mb-2 text-center">
-                <a href="">INGRESAR CÓDIGO ></a>
             </div>
+
+            <!-- floating image -->
+            <img src="/assets/classic-logo.png" alt="clasic game" class="absolute top-0 right-0 w-16">
         </div>
-        <!-- infinite-->
-        <div
-            class="relative w-4/5 flex-none p-2 px-4 pt-2 ml-2 mr-6 text-high-contrast rounded-small 
-            text-high-contrast bg-low-contrast shadow-neo text-subtitle">
-            <h3 class="text-title">Modo Infinito</h3>
-            <img src="../../../../assets/infinite-logo.png" alt="clasic game" class="absolute top-0 right-0 w-5/12 -mt-12">
-            <hr class="border-reduce-contrast">
-            <p class="my-2">Contesta preguntas de cualquier temática hasta fallar</p>
-            <a href="" class="mt-3 mb-2 text-center ">
-                <div class="my-2 bg-primary rounded-small text-high-contrast bg-primary">
-                    EMPEZAR PARTIDA >
+
+        <!-- multiplayer -->
+        <div class="relative flex-none w-4/5 pt-8 ">
+            <!-- card container -->
+            <div class="overflow-hidden rounded-small bg-low-contrast shadow-neo">
+                <div class="flex flex-col px-4 py-3 space-y-3">
+                    <!-- card title -->
+                    <h3 class="text-title font-title text-high-contrast">
+                        Multijugador
+                    </h3>
+
+                    <!-- divider -->
+                    <hr class="border-reduce-contrast">
+
+                    <!-- card description -->
+                    <p class="text-body font-body text-high-contrast">
+                        Compite con tus amigos para conocer quien es el mejor
+                    </p>
+
+                    <!-- play action -->
+                    <a href="" class="flex justify-center px-4 py-2 bg-primary rounded-small">
+                        <span class="uppercase whitespace-no-wrap text-button font-button text-high-contrast">
+                            CREAR UNA NUEVA PARTIDA >
+                        </span>
+                    </a>
+
+                    <!-- secondary action -->
+                    <a href="" class="flex justify-center px-4 py-2">
+                        <span class="uppercase whitespace-no-wrap text-button font-button text-high-contrast">
+                            INGRESAR CÓDIGO >
+                        </span>
+                    </a>
                 </div>
-            </a>
-            <div class="mt-4 mb-2 text-center">
-                <a href="">VER RANKIN MUNDIAL ></a>
             </div>
+
+            <!-- floating image -->
+            <img src="/assets/multi-logo.png" alt="clasic game" class="absolute top-0 right-0 w-32">
+        </div>
+
+        <!-- infinite-->
+        <div class="relative flex-none w-4/5 pt-8 ">
+            <!-- card container -->
+            <div class="overflow-hidden rounded-small bg-low-contrast shadow-neo">
+                <div class="flex flex-col px-4 py-3 space-y-3">
+                    <!-- card title -->
+                    <h3 class="text-title font-title text-high-contrast">
+                        Modo Infinito
+                    </h3>
+
+                    <!-- divider -->
+                    <hr class="border-reduce-contrast">
+
+                    <!-- card description -->
+                    <p class="text-body font-body text-high-contrast">
+                        Contesta preguntas de cualquier temática hasta fallar
+                    </p>
+
+                    <!-- play action -->
+                    <a href="" class="flex justify-center px-4 py-2 bg-primary rounded-small">
+                        <span class="uppercase whitespace-no-wrap text-button font-button text-high-contrast">
+                            EMPEZAR PARTIDA >
+                        </span>
+                    </a>
+
+                    <!-- secondary action -->
+                    <a href="" class="flex justify-center px-4 py-2">
+                        <span class="uppercase whitespace-no-wrap text-button font-button text-high-contrast">
+                            VER RANKIN MUNDIAL >
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- floating image -->
+            <img src="/assets/infinite-logo.png" alt="clasic game" class="absolute top-0 right-0 w-20">
         </div>
     </div>
 
@@ -161,7 +224,7 @@
         <hr class="my-2 border-low-contrast">
 
         <!-- friends activity -->
-        <div class="my-6 flex flex-row">
+        <div class="flex flex-row my-6">
             <div class="flex-col w-12 h-12 overflow-hidden rounded-full">
                 <img [src]="user.photoURL" alt="Foto de perfil" class="w-full h-full bg-reduce-contrast ">
             </div>
@@ -174,7 +237,7 @@
         </div>
 
         <!-- example friend 2 -->
-        <div class="my-4 flex flex-row">
+        <div class="flex flex-row my-4">
             <div class="flex-col w-12 h-12 overflow-hidden rounded-full">
                 <img [src]="user.photoURL" alt="Foto de perfil" class="w-full h-full bg-reduce-contrast ">
             </div>

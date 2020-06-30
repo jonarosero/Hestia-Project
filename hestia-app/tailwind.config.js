@@ -18,6 +18,7 @@ module.exports = {
             'low-contrast': '#5A5E6F',
             'high-contrast': '#F8F9F9',
             'reduce-contrast': '#ABAEB7',
+            'green': '#5FBE00',
         },
 
         // font theme

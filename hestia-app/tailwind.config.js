@@ -19,6 +19,9 @@ module.exports = {
             'high-contrast': '#F8F9F9',
             'reduce-contrast': '#ABAEB7',
             'green': '#5FBE00',
+            'blue': '#00AAA5',
+            'red': '#DD9200',
+            'orange': '#F03117'
         },
 
         // font theme

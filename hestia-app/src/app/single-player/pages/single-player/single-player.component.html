@@ -23,39 +23,51 @@
 </ng-container>
 
 
-<!-- question -->
-<section class="px-8 pt-10">
-
-    <div class="flex-none p-2 px-4 pt-2 rounded-small 
+<!-- questions -->
+<section class="px-8 pt-24">
+    
+    <div class="relative flex-none p-2 px-4 pt-2 rounded-small 
         bg-white shadow-neo text-subtitle">
+        <!-- timer -->
+        <hr class=" absolute border-4 border-primary-dark top-0 w-48 left-0 rounded">
+        <!-- floating image -->
+        <img src="/assets/infinite-logo.png" alt="run" class="absolute -mt-20 ml-32 w-24">
+
+        <!-- topic -->
         <h3 class="text-title text-low-contrast">Biología</h3>
+
+        <!-- divider-->
         <hr class="border-green">
+
+        <!-- question -->
         <p class="my-2 ">¿Cuántos ATPs y NADH produce una vuelta del Ciclo de Krebs?</p>
+
     </div>
 </section>
 
 <!-- answers -->
 <section class="px-8 pt-6">
         
-        <!-- one major-->
-        <div class="my-3 flex-none p-2 px-4 pt-2 text-high-contrast rounded-small 
-        bg-low-contrast shadow-neo text-subtitle">
-            <p class="my-1 ">36 ATP los NADH se transformarón en ATP</p>
-        </div>
+        <!-- one answer-->
+        <button click="" class="my-3 w-full p-2 pt-2 text-high-contrast rounded-small 
+        bg-low-contrast shadow-neo">
+            <span class="my-1 text-button font-button">36 ATP los NAHD se transforman todos</span>
+        </button>
 
-        <div class="my-3 flex-none p-2 px-4 pt-2 text-high-contrast rounded-small 
-        bg-low-contrast shadow-neo text-subtitle">
-            <p class="my-1">1 ATP y 3 NADH</p>
-        </div>
-
-        <div class="my-3 flex-none p-2 px-4 pt-2 text-high-contrast rounded-small 
-        bg-low-contrast shadow-neo text-subtitle">
-            <p class="my-1">3 ATP y 1 NADH</p>
-        </div>
-
-        <div class="my-3 flex-none p-2 px-4 pt-2 text-high-contrast rounded-small 
-        bg-low-contrast shadow-neo text-subtitle">
-            <p class="my-1">4 ATP y 0 NADH</p>
-        </div>
+        <!-- example 1 -->
+        <button class="my-3 p-2 w-full pt-2 text-high-contrast rounded-small 
+        bg-low-contrast shadow-neo">
+            <span class="my-1 text-button font-button">1 ATP y 3 NADH</span>
+        </button>
+        <!-- example 2 -->
+        <button class="my-3 p-2 w-full pt-2 text-high-contrast rounded-small 
+        bg-low-contrast shadow-neo">
+            <span class="my-1 text-button font-button">3 ATP y 1 NADH</span>
+        </button>
+        <!-- example 3 -->
+        <button class="my-3 w-full p-2 pt-2 text-high-contrast rounded-small 
+        bg-low-contrast shadow-neo">
+            <span class="my-1 text-button font-button">4 ATP y 0 NADH</span>
+        </button>
 
 </section>

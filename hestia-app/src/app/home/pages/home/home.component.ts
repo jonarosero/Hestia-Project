@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'hestia-home',
@@ -14,13 +16,18 @@ export class HomeComponent implements OnInit {
     private readonly functions: AngularFireFunctions,
     private readonly router: Router) { }
 
+  private createSolo: Observable<boolean>;
+
   ngOnInit(): void {
+    const createSoloGame = this.functions.httpsCallable<any, string>('createSoloGame');
+    this.createSolo = createSoloGame({}).pipe(
+      mergeMap(async id => await this.router.navigate(['/solo', id])),
+      finalize(() => console.log('finalize'))
+    );
   }
 
   createSoloGame() {
-    const callable = this.functions.httpsCallable('createSoloGame');
-
-    callable({}).subscribe(key => this.router.navigate(['/solo', key]));
+    this.createSolo.subscribe();
   }
 
 }

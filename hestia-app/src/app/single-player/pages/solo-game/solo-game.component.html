@@ -1,0 +1,70 @@
+<ng-container *ngIf="auth.user | async as user">
+    <header class="px-8 pt-10">
+        <div class="flex flex-row items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-headline font-headline text-reduce-contrast">
+                    1600 pts
+                </span>
+
+                <span class="text-reduce-contrast text-subhead font-subhead">
+                    Pregunta: 5 de 10
+                </span>
+
+                <!-- timer -->
+                <ng-container *ngIf="timerObs">
+                    <span class="text-subhead font-subhead text-primary-light">
+                        {{timerObs | async}} segundos restantes
+                    </span>
+                </ng-container>
+                <!-- end timer -->
+            </div>
+
+            <div class="w-16 h-16 overflow-hidden rounded-full ">
+                <img [src]="user.photoURL" alt="Foto de perfil" class="w-full h-full bg-reduce-contrast">
+            </div>
+        </div>
+    </header>
+</ng-container>
+
+
+<!-- questions container -->
+<ng-container *ngFor="let question of soloGame.questions">
+
+    <section class="flex flex-col px-8 pt-6 space-y-4">
+
+        <!-- question card -->
+        <div class="flex flex-col mt-16 bg-white rounded shadow-neo text-subtitle">
+            <!-- progress -->
+            <div class="relative w-3/4 h-2 rounded-t bg-primary">
+                <img src="/assets/infinite-logo.png" alt="run"
+                    class="absolute bottom-0 right-0 w-20 transform translate-x-2/4">
+            </div>
+
+            <div class="px-4 pt-2">
+                <!-- topic -->
+                <h3 class="text-title text-low-contrast">Biología</h3>
+
+                <!-- divider-->
+                <hr class="border-green">
+
+                <!-- question -->
+                <p class="my-2 ">
+                    {{question.questionText}}
+                </p>
+
+            </div>
+
+            <!-- floating image -->
+        </div>
+
+        <!-- answers container -->
+        <!-- loop thought all answers -->
+        <ng-container *ngFor="let answer of question.answers">
+            <button click="" class="w-full p-2 text-high-contrast rounded-small bg-low-contrast shadow-neo">
+                <span class="my-1 text-button font-button">
+                    {{answer.answerText}}
+                </span>
+            </button>
+        </ng-container>
+    </section>
+</ng-container>

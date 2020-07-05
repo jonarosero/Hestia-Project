@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SoloGameAvailableGuard } from './guards/solo-game-available.guard';
 import { SinglePlayerShellComponent } from './pages/single-player-shell/single-player-shell.component';
 import { SoloGameComponent } from './pages/solo-game/solo-game.component';
 import { TopicsComponent } from './pages/topics/topics.component';
@@ -10,7 +11,12 @@ const routes: Routes = [
   {
     path: '', component: SinglePlayerShellComponent, children: [
       { path: '', component: TopicsComponent },
-      { path: ':id', component: SoloGameComponent, resolve: { soloGame: PreloadSoloGameResolver } }
+      {
+        path: ':id',
+        component: SoloGameComponent,
+        resolve: { soloGame: PreloadSoloGameResolver },
+        canActivate: [SoloGameAvailableGuard],
+      }
     ]
   },
 ];
@@ -28,5 +34,9 @@ export class SinglePlayerRoutingModule {
 
   static resolvers = [
     PreloadSoloGameResolver,
+  ];
+
+  static guards = [
+    SoloGameAvailableGuard,
   ];
 }

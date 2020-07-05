@@ -13,13 +13,8 @@ export class PreloadSoloGameResolver implements Resolve<SoloGame> {
     ) { }
 
     resolve({ params }: ActivatedRouteSnapshot): Observable<SoloGame> {
-        console.log('asdas');
-
         return this.database.object<SoloGame>(`single-player/${params.id}`)
             .valueChanges()
-            // .pipe(map(snap => snap.payload.val()));
-            .pipe(
-                first()
-            );
+            .pipe(first());
     }
 }

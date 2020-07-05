@@ -22,7 +22,7 @@ export const createSoloGame = functions.https.onCall(async (data, context) => {
     });
     const user = context.auth?.uid;
 
-    const ref = await database.ref('single-player').push({ user, questions, status: 'STATING', created: Date.now() });
+    const ref = await database.ref('single-player').push({ user, questions, status: 'STARTING', created: Date.now() });
 
     return ref.key;
 });

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { FirebaseModule } from './modules/firebase.mpdule';
+import { FirebaseModule } from './modules/firebase.module';
 
 
 

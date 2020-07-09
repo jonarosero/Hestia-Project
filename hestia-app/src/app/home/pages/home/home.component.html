@@ -80,7 +80,7 @@
     </div>
 </section>
 
-<!-- games -->
+<!-- game selection -->
 <section class="pt-10 pb-5">
     <!-- section header -->
     <div class="ml-8">
@@ -95,7 +95,7 @@
     <!-- choose your game -->
     <div class="flex flex-row flex-no-wrap space-x-8 overflow-x-auto scrolling-touch">
         <!-- individual -->
-        <div class="relative flex-none w-4/5 pt-8 ml-2">
+        <div class="relative flex-none w-4/5 pt-8 ml-8">
             <!-- card container -->
             <div class="overflow-hidden rounded-small bg-low-contrast shadow-neo">
                 <div class="flex flex-col px-4 py-3 space-y-3">
@@ -120,7 +120,7 @@
                     </button>
 
                     <!-- secondary action -->
-                    <a href="" class="flex justify-center px-4 py-2">
+                    <a [routerLink]="['/solo']" class="flex justify-center px-4 py-2">
                         <span class="uppercase whitespace-no-wrap text-button font-button text-high-contrast">
                             VER TEMÁTICAS
                         </span>
@@ -151,7 +151,8 @@
                     </p>
 
                     <!-- play action -->
-                    <a href="" class="flex justify-center px-4 py-2 bg-primary rounded-small">
+                    <a [routerLink]="['/multijugador/nuevo/id']"
+                        class="flex justify-center px-4 py-2 bg-primary rounded-small">
                         <span class="uppercase whitespace-no-wrap text-button font-button text-high-contrast">
                             CREAR UNA NUEVA PARTIDA >
                         </span>

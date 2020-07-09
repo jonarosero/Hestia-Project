@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OlimpoComponent } from './pages/olimpo/olimpo.component';
-import { MultiplayerComponent } from './pages/multiplayer/multiplayer.component';
-import { MultiplayerShellComponent } from './multiplayer-shell.component';
+
+import { MultiplayerGameComponent } from './pages/multiplayer-game/multiplayer-game.component';
+import { NewMultiplayerGameComponent } from './pages/new-multiplayer-game/new-multiplayer-game.component';
+import { StoreMultiplayerComponent } from './pages/store-multiplayer/store-multiplayer.component';
 
 
 const routes: Routes = [
-  {
-    path: '', component: MultiplayerShellComponent, children: [
-      { path: '', component: OlimpoComponent },
-      { path: ':id', component: MultiplayerComponent }
-    ]
-  },
+  { path: 'nuevo/:gameId', component: NewMultiplayerGameComponent },
+  { path: 'partida/:gameId', component: MultiplayerGameComponent },
+  { path: 'tienda/:gameId', component: StoreMultiplayerComponent },
+
 ];
 
 @NgModule({
@@ -20,8 +19,9 @@ const routes: Routes = [
 })
 export class MultiplayerRoutingModule {
   static pages = [
-    MultiplayerShellComponent,
-    OlimpoComponent,
-    MultiplayerComponent,
+
+    NewMultiplayerGameComponent,
+    StoreMultiplayerComponent,
+    MultiplayerGameComponent,
   ];
 }

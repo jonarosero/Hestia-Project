@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { MultiplayerGameComponent } from './pages/multiplayer-game/multiplayer-game.component';
+import { NewMultiplayerGameComponent } from './pages/new-multiplayer-game/new-multiplayer-game.component';
+import { StoreMultiplayerComponent } from './pages/store-multiplayer/store-multiplayer.component';
 
-import { MultiplayerComponent } from './multiplayer.component';
 
-const routes: Routes = [{ path: '', component: MultiplayerComponent }];
+const routes: Routes = [
+  { path: 'nuevo/:gameId', component: NewMultiplayerGameComponent },
+  { path: 'partida/:gameId', component: MultiplayerGameComponent },
+  { path: 'tienda/:gameId', component: StoreMultiplayerComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MultiplayerRoutingModule { }
+export class MultiplayerRoutingModule {
+  static pages = [
+    NewMultiplayerGameComponent,
+    StoreMultiplayerComponent,
+    MultiplayerGameComponent,
+  ];
+}

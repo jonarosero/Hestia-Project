@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+
 import { NgModule } from '@angular/core';
 import { MultiplayerRoutingModule } from './multiplayer-routing.module';
 
@@ -6,6 +7,7 @@ import { MultiplayerRoutingModule } from './multiplayer-routing.module';
   declarations: [
     MultiplayerRoutingModule.pages,
   ],
+
   imports: [
     CommonModule,
     MultiplayerRoutingModule,

@@ -1,0 +1,109 @@
+<ng-container *ngIf="auth.user | async as user">
+    <header class="px-8 pt-10">
+        <div class="flex flex-row items-center justify-between">
+            <div class="flex flex-col">
+                <span class="text-headline font-headline text-high-contrast">
+                    Bienvenido al Olimpo 🏛️
+                </span>
+
+                <span class="text-reduce-contrast text-subhead font-subhead">
+                    Esperando a otros jugadores
+                </span>
+
+            </div>
+
+            <div class="w-12 h-12 overflow-hidden rounded-full ">
+                <img [src]="user.photoURL" alt="Foto de perfil" class="w-full h-full bg-reduce-contrast">
+            </div>
+        </div>
+    </header>
+</ng-container>
+
+<!-- begin timer -->
+<section class="pt-10 pb-3 relative">
+    <div class="mx-8 items-center justify-between">
+        <div class="flex flex-col">
+            <h2 class="text-headline font-headline text-high-contrast ">
+                Comienza en:
+            </h2>
+            <!-- timer -->
+            <div class="flex flex-row px-3 py-3 flex-no-wrap space-x-6 overflow-x-auto">
+                <div
+                    class="px-3 py-2 justify-center text-display-2 overflow-hidden rounded-small bg-high-contrast shadow-neo">
+                    <span>
+                        3
+                    </span>
+                </div>
+                <div
+                    class="px-3 py-2 justify-center text-display-2 overflow-hidden rounded-small bg-high-contrast shadow-neo">
+                    <span>
+                        0
+                    </span>
+                </div>
+            </div>
+            <!-- end timer -->
+        </div>
+        <img src="../../../../assets/hestia-te.png" alt="" class="absolute right-0 my-4 top-0">
+    </div>
+</section>
+
+
+<!-- other players -->
+<ng-container *ngIf="auth.user | async as user">
+    <!-- section header -->
+    <div class="pt-8 pb-1">
+        <div class="mx-8 flex flex-row items-center justify-between relative">
+            <div class="flex flex-col">
+                <h2 class="text-headline font-headline text-high-contrast">
+                    Jugadores en la partida
+                </h2>
+                <div class="px-3 py-1">
+                    <button click="" class="text-reduce-contrast text-subhead font-subhead mt-1">
+                        Copiar enlace
+                    </button>
+                    <button click="" class="absolute right-0 text-primary-dark text-subhead font-subhead mt-1">
+                        + Invitar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr class="border-high-contrast border-1 rounded-small mx-8 my-3">
+    </div>
+    <!-- end header -->
+
+    <!-- players list -->
+    <div class="flex flex-row mx-10 justify-between">
+        <!-- player two -->
+        <div class="flex flex-col">
+            <div class="w-16 h-16 overflow-hidden rounded-full ">
+                <img [src]="user.photoURL" alt="Foto de perfil" class="w-full h-full bg-reduce-contrast">
+            </div>
+            <span class="text-subtitle font-subtitle justify-center text-center text-reduce-contrast">
+                {{user.displayName.split(' ')[0]}}
+            </span>
+        </div>
+
+        <!-- player three -->
+        <div class="flex flex-col">
+            <div class="w-16 h-16 overflow-hidden rounded-full ">
+                <img [src]="user.photoURL" alt="Foto de perfil" class="w-full h-full bg-reduce-contrast">
+            </div>
+            <span class="text-subtitle font-subtitle justify-center text-center text-reduce-contrast">
+                {{user.displayName.split(' ')[0]}}
+            </span>
+        </div>
+
+        <!-- player four -->
+        <div class="flex flex-col">
+            <div class="w-16 h-16 overflow-hidden rounded-full ">
+                <img [src]="user.photoURL" alt="Foto de perfil" class="w-full h-full bg-reduce-contrast">
+            </div>
+            <span class="text-subtitle font-subtitle justify-center text-center text-reduce-contrast">
+                {{user.displayName.split(' ')[0]}}
+            </span>
+        </div>
+    </div>
+    <!-- end players -->
+</ng-container>
+
+<hestia-store-multiplayer></hestia-store-multiplayer>

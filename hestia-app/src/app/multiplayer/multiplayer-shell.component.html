@@ -1,43 +1,27 @@
 <div class="flex flex-col h-full">
     <div class="flex-grow overflow-y-auto">
-
+        <router-outlet></router-outlet>
     </div>
 
     <nav class="sticky bottom-0 w-full overflow-x-auto bg-background shadow-top">
-        <div class="flex flex-row justify-around text-reduce-contrast">
+        <div class="flex flex-row justify-start text-reduce-contrast">
             <!-- home link -->
-            <a href=""
+            <a routerLink="/" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}"
                 class="px-4 py-2 uppercase whitespace-no-wrap text-button font-button">
-                <i class="fas fa-home"></i>
+                <i class="far fa-times-circle"></i>
+                <span class="mx-1">CANCELAR</span>
                 <ng-container *ngIf="router.url === '/'">
                     Inicio
                 </ng-container>
             </a>
 
-            <!-- leader board link -->
-            <a href=""
+            <!-- home link -->
+            <a routerLink="/" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact: true}"
                 class="px-4 py-2 uppercase whitespace-no-wrap text-button font-button">
-                <i class="fas fa-list-ol"></i>
-                <ng-container *ngIf="router.url === '/tablero'">
-                    Tablero
-                </ng-container>
-            </a>
-
-            <!-- profile link -->
-            <a href=""
-                class="px-4 py-2 uppercase whitespace-no-wrap text-button font-button">
-                <i class="far fa-user-circle"></i>
-                <ng-container *ngIf="router.url === '/perfil'">
-                    Perfil
-                </ng-container>
-            </a>
-
-            <!-- profile link -->
-            <a href=""
-                class="px-4 py-2 uppercase whitespace-no-wrap text-button font-button">
-                <i class="fas fa-cog"></i>
-                <ng-container *ngIf="router.url === '/configuracion'">
-                    Configuración
+                <i class="far fa-times-circle"></i>
+                <span class="mx-1">INICIAR</span>
+                <ng-container *ngIf="router.url === '/'">
+                    Inicio
                 </ng-container>
             </a>
         </div>

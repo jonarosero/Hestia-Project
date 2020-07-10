@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
     selector: 'hestia-multiplayer-game',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class MultiplayerGameComponent implements OnInit {
-    constructor() { }
+    constructor(public readonly auth: AngularFireAuth,) { }
 
     ngOnInit() { }
 }

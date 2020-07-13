@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
 
   constructor(
-    private readonly auth: AngularFireAuth,
+    public readonly auth: AngularFireAuth,
     private readonly router: Router) { }
 
   ngOnInit(): void { }

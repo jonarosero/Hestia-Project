@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { InfiniteRoutingModule } from './infinite-routing.module';
-import { InfiniteComponent } from './infinite.component';
+
 
 
 @NgModule({
-  declarations: [InfiniteComponent],
+  declarations: [
+    InfiniteRoutingModule.pages
+  ],
   imports: [
     CommonModule,
     InfiniteRoutingModule

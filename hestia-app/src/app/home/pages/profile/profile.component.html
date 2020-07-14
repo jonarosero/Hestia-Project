@@ -1,8 +1,119 @@
-<div class="py-8 mx-8">
-    <div class="flex justify-center">
-        <button class="px-4 py-2 shadow-neo text-reduce-contrast" (click)="signOut()">
-            <i class="fas fa-sign-out-alt"></i>
-            Cerrar Sesión
-        </button>
+<ng-container *ngIf="auth.user | async as user">
+    <header class="px-8 pt-10">
+        <div class="flex flex-row items-center justify-center">
+            <div class="flex flex-col ">
+                <div class="w-32 h-32 overflow-hidden rounded-full">
+                    <img [src]="user.photoURL" alt="Foto de perfil" class="w-full h-full bg-reduce-contrast shadow-neo">
+                </div>
+                <h1 class="text-headline font-headline text-high-contrast text-center">
+                    {{user.displayName.split(' ')[0] | titlecase}} 
+                </h1>
+            </div>
+        </div>
+        <!-- user information -->
+        <div class="flex flex-row items-center justify-start mt-3">
+            <div class="flex flex-col">
+                <span class="text-body font-body text-low-contrast">
+                    Email:
+                </span>
+                <span class="text-body font-body text-reduce-contrast">
+                    jars9605@gmail.com
+                </span>
+            </div>
+        </div>
+    </header>
+</ng-container>
+
+<!-- position -->
+<section class="pt-8 pb-3 relative">
+    <div class="mx-8 items-center justify-start">
+        <div class="flex flex-col">
+
+            <!-- global position -->
+            <span class="text-display-2 font-display-2 text-low-contrast">
+                #1 Global
+            </span>
+
+            <!-- total points -->
+            <span class="text-body font-body text-reduce-contrast">
+                3050 pts - 20 partidas
+            </span>
+
+            <span class="text-display-3 font-display-3 absolute mx-8 my-2 right-0">
+                🏆
+            </span>
+
+        </div>
     </div>
-</div>
+</section>
+
+<!-- historial -->
+<section class="pt-3 pb-3">
+    <div class="mx-8 items-center justify-start">
+        <!-- head -->
+        <div class="flex flex-col">
+            <h2 class="text-headline font-headline text-high-contrast">
+                Historial
+            </h2>
+            <hr class="border-high-contrast border-1 rounded-small">
+        </div>
+        <!--end head -->
+
+        <!-- last games -->
+        <div class="flex flex-col">
+            <div class="flex flex-row">
+                <span class="text-display-1 font-display-1 text-primary mt-2">+</span>
+
+                <!-- information container -->
+                <div class="flex flex-col justify-start mx-2 mt-1">
+                    <!-- mode game -->
+                    <span class="text-title font-title text-high-contrast">Individual</span>
+
+                    <!-- topic/total questions  and points -->
+                    <span class="text-subtitle font-sutext-subtitle text-high-contrast -mt-1">Matemática - 200 puntos</span>
+                    
+                    <!-- date -->
+                    <span class="text-overline font-overline text-reduce-contrast">Ayer</span>
+                </div>
+                <!--end container-->
+            </div>
+        </div>
+
+        <!-- example other play -->
+        <div class="flex flex-col">
+            <div class="flex flex-row">
+                <span class="text-display-1 font-display-1 text-primary mt-2">+</span>
+                <div class="flex flex-col justify-start mx-2 mt-1">
+                    <span class="text-title font-title text-high-contrast">Multijugador</span>
+                    <span class="text-subtitle font-sutext-subtitle text-high-contrast -mt-1">Biología - 350 puntos</span>
+                    <span class="text-overline font-overline text-reduce-contrast">Hace 3 días</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- example other play -->
+        <div class="flex flex-col">
+            <div class="flex flex-row">
+                <span class="text-display-1 font-display-1 text-primary mt-2">+</span>
+                <div class="flex flex-col justify-start mx-2 mt-1">
+                    <span class="text-title font-title text-high-contrast">Modo Infinito</span>
+                    <span class="text-subtitle font-sutext-subtitle text-high-contrast -mt-1">30 preguntas - 685 puntos</span>
+                    <span class="text-overline font-overline text-reduce-contrast">Hace 8 días</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- example other play -->
+        <div class="flex flex-col">
+            <div class="flex flex-row">
+                <span class="text-display-1 font-display-1 text-primary mt-2">+</span>
+                <div class="flex flex-col justify-start mx-2 mt-1">
+                    <span class="text-title font-title text-high-contrast">Individual</span>
+                    <span class="text-subtitle font-sutext-subtitle text-high-contrast -mt-1">Arte - 685 puntos</span>
+                    <span class="text-overline font-overline text-reduce-contrast">Hace 9 días</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

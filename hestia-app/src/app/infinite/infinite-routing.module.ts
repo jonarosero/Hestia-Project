@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-import { InfiniteComponent } from './infinite.component';
+import { InfiniteGameComponent } from './pages/infinite-game/infinite-game.component';
 
-const routes: Routes = [{ path: '', component: InfiniteComponent }];
+
+const routes: Routes = [
+  { path: 'partida/:id', component: InfiniteGameComponent }
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class InfiniteRoutingModule { }
+export class InfiniteRoutingModule {
+  static pages = [
+
+    InfiniteGameComponent,
+  ];
+}

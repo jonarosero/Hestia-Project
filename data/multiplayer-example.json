@@ -1,0 +1,93 @@
+{
+    "multiplayer": {
+        "9846513289746": {
+            "status": "STARTING",
+            "status": "FINISHED",
+            "status": "STORE",
+            "status": "QUESTIONS",
+            "currentQuestion": 1,
+            "users": {
+                "g-asdfweq987qw5215wqe": {
+                    "id": "g-asdfweq987qw5215wqe",
+                    "name": "Jonathan Andres Rosero Soto",
+                    "avatar": null,
+                    "points": 1500,
+                    "coins": 1000,
+                    "power-ups": {
+                        "rayo": {
+                            "id": "rayo",
+                            "name": "Rayo",
+                            "count": 2
+                        }
+                    },
+                    "correctCounter": 3,
+                    "currentQuestion": 1,
+                    "effect": {
+                        "mochuelo": {
+                            "id": "mochuelo",
+                            "name": "Mochuelo",
+                            "uses": 1
+                        }
+                    }
+                },
+                "g-aqrewjnosladaf9821": {
+                    "id": "g-aqrewjnosladaf9821",
+                    "name": "Bruno Alexander Esparza Carchi",
+                    "avatar": null,
+                    "points": 1400,
+                    "coins": 1000,
+                    "power-ups": {
+                        "rayo": {
+                            "id": "rayo",
+                            "name": "Rayo",
+                            "count": 1
+                        }
+                    },
+                    "correctCounter": 2,
+                    "currentQuestion": 3,
+                    "effect": {
+                        "rayo": {
+                            "id": "rayo",
+                            "name": "Rayo",
+                            "uses": 1
+                        }
+                    }
+                }
+            },
+            "questions": {
+                "0": {
+                    "questionText": "Cual es el lenguaje de programación que se utiliza en los navegadores web?",
+                    "id": "qb5daveW8ba8EYovn3Mw",
+                    "time": 15,
+                    "defaultWrongAnswerMessage": "Respuesta incorrecta, te recomiendo html for dummy's",
+                    "difficulty": "HARD",
+                    "image": null,
+                    "answers": {
+                        "0": {
+                            "answerText": "Javascript",
+                            "correct": true
+                        },
+                        "1": {
+                            "answerText": "HTML",
+                            "correct": false,
+                            "answerMessage": "HTML no es un lenguaje de programación, es un lenguaje de maquetado"
+                        }
+                    },
+                    "status": {
+                        "g-asdfweq987qw5215wqe": "COMPLETED",
+                        "g-asdfweq987qw5215wqe": "UNCOMPLETED",
+                        "g-aqrewjnosladaf9821": "WAITING"
+                    }
+                }
+            },
+            "power-ups": {
+                "rayo": {
+                    "id": "rayo",
+                    "name": "Rayo",
+                    "description": "Lorem ipsum dolor sit amet consectetur ...",
+                    "coins": 300
+                }
+            }
+        }
+    }
+}

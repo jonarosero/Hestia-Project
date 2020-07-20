@@ -19,12 +19,13 @@ export class SignInComponent implements OnInit {
   }
 
   async signInWithFacebook() {
-    var provider = new auth.GoogleAuthProvider();
+    var provider = new auth.FacebookAuthProvider();
+    provider.addScope('email');
     await this.auth.signInWithRedirect(provider);
   }
 
   async signInWithTwitter() {
-    var provider = new auth.GoogleAuthProvider();
+    var provider = new auth.TwitterAuthProvider();
     await this.auth.signInWithRedirect(provider);
   }
 

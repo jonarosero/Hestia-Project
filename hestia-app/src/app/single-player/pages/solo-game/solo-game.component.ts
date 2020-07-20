@@ -1,19 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { ActivatedRoute } from '@angular/router';
-import { interval, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Answer, SoloGame, SoloGameStatus } from 'src/app/shared/interfaces/solo-game';
+import { interval, Observable, of } from 'rxjs';
+import { catchError, map, mergeMap, shareReplay, switchMap, take, tap } from 'rxjs/operators';
+import { Answer, Question, SoloGame } from 'src/app/shared/interfaces/solo-game';
 import { reverseTimer } from 'src/app/shared/operators/reverse-timer';
-
-
 
 @Component({
   selector: 'hestia-solo-game',
   templateUrl: './solo-game.component.html'
 })
-export class SoloGameComponent implements OnInit, OnDestroy {
+export class SoloGameComponent implements OnInit {
 
   constructor(
     public readonly auth: AngularFireAuth,
@@ -21,86 +19,66 @@ export class SoloGameComponent implements OnInit, OnDestroy {
     private readonly route: ActivatedRoute,
   ) { }
 
-  currentQuestionIndex: number | null = null;
-  soloGame: SoloGame;
+  public readonly soloGame: Observable<SoloGame> = this.route.params.pipe(
+    map(p => p.id),
+    switchMap(gameId => this.db.object<SoloGame>(`single-player/${gameId}`).valueChanges()),
+    shareReplay(1),
+    tap(g => console.log('Game:', g)),
+  );
 
-  public timer: number | null = null;
-  // private timerObs: Observable<number> = null;
-  private timerSub: Subscription | null = null;
+  public readonly currentQuestion: Observable<Question | null> = this.soloGame.pipe(
+    map(g => g.questions[g.currentQuestion]),
+    catchError(() => of(null)),
+    shareReplay(1),
+  );
 
-  ngOnInit(): void {
-    const game = this.route.data.pipe(
-      map(d => d.soloGame as SoloGame)
+  public readonly gameStarted: Observable<boolean> = this.soloGame.pipe(
+    map(g => g?.status === 'ON_GOING'),
+  );
+
+  public readonly timer: Observable<number> = this.currentQuestion.pipe(
+    switchMap(q => interval(1000).pipe(reverseTimer(q.time))),
+    map(t => Math.max(t, 0)),
+    tap(t => {
+      if (t === 0) this.selectAnswer(null);
+    }),
+    catchError(() => of(null))
+  );
+
+  async ngOnInit(): Promise<void> {
+    const { params } = this.route.snapshot;
+    await this.db.object<SoloGame>(`single-player/${params.id}`).update({ currentQuestion: 0, status: 'ON_GOING' });
+  }
+
+  selectAnswer(answer: Answer | null): void {
+    const update = this.soloGame.pipe(
+      take(1),
+      mergeMap(async game => {
+        let value = {
+          currentQuestion: game.currentQuestion + 1,
+          [`questions/${game.currentQuestion}/selected`]: answer,
+          [`questions/${game.currentQuestion}/status`]: 'ANSWERED',
+        };
+
+        // game ended
+
+        if (value.currentQuestion === game.questions.length - 1) {
+          value.status = 'ENDED'
+        }
+
+        return await this.db.object(`single-player/${game.id}`).update(value)
+      }),
     );
 
-    game.subscribe(async obj => {
-      const { params } = this.route.snapshot;
-      await this.db.object<SoloGameStatus>(`single-player/${params.id}/status`).set('ON_GOING');
-      this.soloGame = obj;
-      this.nextQuestion();
-    });
-  }
+    update.subscribe();
 
-  ngOnDestroy(): void {
-    if (this.timerSub)
-      this.timerSub.unsubscribe();
-  }
-
-  private async nextQuestion(): Promise<void> {
-    // set starting index in case user has reloaded the page
-    if (this.currentQuestionIndex === null) {
-      this.currentQuestionIndex = this.soloGame.questions.findIndex(q => !!q.selected);
-    }
-
-    this.currentQuestionIndex++;
-
-    // validate there are more questions on the way
-    // game ended
-    if (this.currentQuestionIndex >= this.soloGame.questions.length) {
-      const { params } = this.route.snapshot;
-      await this.db.object<SoloGameStatus>(`single-player/${params.id}/status`).set('ENDED');
-      console.log('Game finished');
-      return;
-    }
-
-    // next question please!!!
-    // increment timer
-    // create a new timer for new current
-    const current = this.soloGame.questions[this.currentQuestionIndex];
-
-    const timerObs = interval(1000).pipe(reverseTimer(current.time));
-    this.timerSub = timerObs.subscribe(async timer => {
-      this.timer = timer;
-
-      // current timer ended
-      // unsubscribe to current timer to reset
-      // call for next question
-      if (timer === 0) {
-        const { params } = this.route.snapshot;
-        await this.db.object(`single-player/${params.id}/questions/${this.currentQuestionIndex}/selected`).set('NONE');
-
-        this.timerSub.unsubscribe();
-        this.timerSub = null;
-        this.nextQuestion();
-
+    if (answer)
+      if (answer.correct) {
+        alert('Respuesta Correcta');
+      } else {
+        alert('Respuesta incorrecta');
       }
-    })
-  }
-
-  async selectAnswer(questionIndex: number, answer: Answer) {
-    const { params } = this.route.snapshot;
-    console.log({ answer });
-    await this.db.object(`single-player/${params.id}/questions/${questionIndex}/selected`).set(answer);
-
-    if (answer.correct) {
-      alert('Respuesta Correcta');
-    } else {
-      alert('Respuesta incorrecta');
-    }
-
-    this.timerSub.unsubscribe();
-    this.timerSub = null;
-    this.timer = null;
-    this.nextQuestion();
+    else
+      alert('No selecciono ninguna respuesta')
   }
 }

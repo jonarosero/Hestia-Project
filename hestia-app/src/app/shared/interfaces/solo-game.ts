@@ -19,7 +19,7 @@ export interface Question {
 export interface SoloGame {
     id: string;
     created: Date;
-    currentQuestion: number;
+    currentQuestion?: number;
     questions: Array<Question>;
     status: SoloGameStatus;
     user: any;

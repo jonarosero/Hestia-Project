@@ -11,7 +11,6 @@ import { SinglePlayerRoutingModule } from './single-player-routing.module';
     SinglePlayerRoutingModule.pages,
   ],
   providers: [
-    SinglePlayerRoutingModule.resolvers,
     SinglePlayerRoutingModule.guards,
   ]
 })

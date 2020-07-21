@@ -5,6 +5,7 @@ import { ConfigurationComponent } from './pages/configuration/configuration.comp
 import { HomeComponent } from './pages/home/home.component';
 import { LeaderBoardComponent } from './pages/leader-board/leader-board.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ViewGameComponent } from './pages/view-game/view-game.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
       { path: 'perfil', component: ProfileComponent },
       { path: 'configuracion', component: ConfigurationComponent },
       { path: 'tablero', component: LeaderBoardComponent },
+      {
+        path: 'ver/:gameId',
+        component: ViewGameComponent,
+      },
     ]
   },
 ];
@@ -29,5 +34,6 @@ export class HomeRoutingModule {
     ProfileComponent,
     ConfigurationComponent,
     LeaderBoardComponent,
+    ViewGameComponent
   ];
 }

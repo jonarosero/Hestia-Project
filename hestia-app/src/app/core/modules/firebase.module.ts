@@ -17,13 +17,5 @@ import { environment } from 'src/environments/environment';
         AngularFireFunctionsModule,
         AngularFireDatabaseModule,
     ],
-    exports: [
-        AngularFireModule,
-        AngularFirestoreModule,
-        AngularFireStorageModule,
-        AngularFireAuthModule,
-        AngularFireFunctionsModule,
-        AngularFireDatabaseModule,
-    ],
 })
 export class FirebaseModule { }

@@ -4,7 +4,6 @@ import { SoloGameAvailableGuard } from './guards/solo-game-available.guard';
 import { SinglePlayerShellComponent } from './pages/single-player-shell/single-player-shell.component';
 import { SoloGameComponent } from './pages/solo-game/solo-game.component';
 import { TopicsComponent } from './pages/topics/topics.component';
-import { PreloadSoloGameResolver } from './resolvers/preload-solo-game.resolver';
 
 
 const routes: Routes = [
@@ -14,9 +13,9 @@ const routes: Routes = [
       {
         path: ':id',
         component: SoloGameComponent,
-        resolve: { soloGame: PreloadSoloGameResolver },
         canActivate: [SoloGameAvailableGuard],
-      }
+      },
+
     ]
   },
 ];
@@ -32,9 +31,6 @@ export class SinglePlayerRoutingModule {
     SoloGameComponent,
   ];
 
-  static resolvers = [
-    PreloadSoloGameResolver,
-  ];
 
   static guards = [
     SoloGameAvailableGuard,
